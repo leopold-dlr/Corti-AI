@@ -4,9 +4,9 @@
 As soon as the call ends, it becomes structured data, a binary quality check and an investment memo.
 Built with ElevenLabs Agents (voice, analysis) and Mistral (conversation LLM and memo).
 
-**Live demo:** _coming soon_ <!-- TODO: Vercel URL -->
+**Live demo:** [nicolas-agent.vercel.app](https://nicolas-agent.vercel.app)
 
-![Interview dossier](docs/screenshot.png) <!-- TODO: add the screenshot -->
+![Interview dossier](docs/screenshot.png)
 
 > Fictional scenario for demonstration purposes: a due diligence on Dealroom, a VC data platform.
 > Not affiliated with Dealroom.co and no information about any real deal.
