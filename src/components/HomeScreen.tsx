@@ -20,8 +20,8 @@ export function HomeScreen({ onStart, error }: HomeScreenProps) {
 
   return (
     // Tient dans la hauteur de l'écran (moins l'en-tête et le pied de page) : l'Orb prend la place restante
-    <div className="flex h-[calc(100svh-7rem)] min-h-min flex-col items-center px-5 pt-[clamp(1.5rem,6svh,6rem)] pb-4 text-center sm:px-8">
-      <h1 className="text-5xl leading-none font-semibold tracking-[-0.045em] sm:text-[clamp(3rem,10svh,4.5rem)] lg:text-[clamp(3rem,11svh,6rem)]">
+    <div className="flex h-[calc(100svh-7rem)] min-h-min flex-col items-center px-5 pt-[clamp(1.5rem,5svh,6rem)] pb-4 text-center sm:px-8">
+      <h1 className="text-5xl leading-none font-semibold tracking-[-0.045em] sm:text-[clamp(3rem,10svh,4.5rem)] lg:text-[clamp(3rem,10svh,6rem)]">
         {words.map((word, i) => (
           <motion.span
             key={`${lang}-${i}`}
@@ -41,10 +41,10 @@ export function HomeScreen({ onStart, error }: HomeScreenProps) {
         {t.roleplay}
       </p>
 
-      <div className="flex min-h-min w-full flex-1 items-center justify-center py-[clamp(0.75rem,3svh,2.5rem)]">
+      <div className="flex min-h-min w-full flex-1 items-center justify-center py-[clamp(0.5rem,3svh,2.5rem)]">
         <motion.div
           layoutId="orb"
-          className="aspect-square h-full min-h-24 max-h-[min(64vw,300px)]"
+          className="aspect-square h-full min-h-20 max-h-[min(64vw,300px)]"
           initial={reducedMotion ? false : { scale: 0.6, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ ...softSpring, delay: orbDelay }}
@@ -63,7 +63,7 @@ export function HomeScreen({ onStart, error }: HomeScreenProps) {
         </p>
       ) : null}
 
-      <ol className="mt-[clamp(1rem,5svh,3rem)] flex flex-col gap-1 text-xs text-muted-foreground sm:flex-row sm:gap-0">
+      <ol className="mt-[clamp(0.75rem,5svh,3rem)] hidden text-xs text-muted-foreground sm:flex">
         {t.steps.map((step, i) => (
           <li key={step} className="sm:after:mx-3 sm:after:content-['—'] sm:last:after:content-none">
             <span className="tabular-nums">{i + 1}.</span> {step}

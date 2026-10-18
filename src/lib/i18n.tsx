@@ -17,7 +17,7 @@ const messages = {
     appName: "Voice Diligence Agent",
     title: "Meet Nicolas",
     pitch:
-      "An AI voice agent that interviews customers for due diligence, then turns each call into structured data and an investment memo.",
+      "An AI voice agent that runs the customer calls of a commercial due diligence on Dealroom: satisfaction, pricing, renewal, AI use. Each call becomes structured data and an investment memo.",
     roleplay:
       "Play a Dealroom user (VC analyst, PE associate). About 8 minutes, in English or French.",
     start: "Start the interview",
@@ -86,7 +86,7 @@ const messages = {
     appName: "Voice Diligence Agent",
     title: "Voici Nicolas",
     pitch:
-      "Un agent vocal IA qui mène des entretiens clients de due diligence, puis transforme chaque appel en données structurées et en note de synthèse.",
+      "Un agent vocal IA qui mène les appels clients d'une due diligence commerciale sur Dealroom : satisfaction, prix, renouvellement, usage de l'IA. Chaque appel devient des données structurées et une note de synthèse.",
     roleplay:
       "Jouez un utilisateur de Dealroom (analyste VC, associate PE). Environ 8 minutes, en français ou en anglais.",
     start: "Commencer l'entretien",
