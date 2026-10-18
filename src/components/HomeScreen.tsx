@@ -41,6 +41,7 @@ export function HomeScreen({ onStart, error }: HomeScreenProps) {
       </p>
 
       <motion.div
+        layoutId="orb"
         className="mt-8 w-[min(64vw,300px)] sm:mt-10"
         initial={reducedMotion ? false : { scale: 0.6, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
