@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, LayoutGroup } from "motion/react";
 import {
   useConversationControls,
@@ -33,6 +33,14 @@ export function InterviewFlow() {
   // Lu dans les callbacks du SDK, qui peuvent s'enchaîner avant un nouveau rendu
   const conversationIdRef = useRef<string | null>(null);
   const lineIdRef = useRef(0);
+
+  // En développement uniquement : ?conversation=<id> rejoue l'analyse d'un appel existant
+  useEffect(() => {
+    if (process.env.NODE_ENV !== "development") return;
+    const replayId = new URLSearchParams(window.location.search).get("conversation");
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- lecture unique de l'URL au montage
+    if (replayId) setPhase({ name: "ended", conversationId: replayId, endedBy: "user" });
+  }, []);
 
   async function start() {
     setError(null);
