@@ -16,7 +16,7 @@ export function DemoApp() {
         <main className="flex flex-1 flex-col">
           <InterviewFlow />
         </main>
-        <footer className="px-5 pb-8 text-center text-xs text-muted-foreground sm:px-8">
+        <footer className="px-5 pb-4 text-center text-xs text-muted-foreground sm:px-8 sm:pb-8">
           {t.disclaimer}
         </footer>
       </MotionConfig>

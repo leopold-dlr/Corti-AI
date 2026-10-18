@@ -43,16 +43,24 @@ export function CallScreen({
   const status = !connected ? t.connecting : isSpeaking ? t.speaking : t.listening;
 
   return (
-    <div className="flex flex-1 flex-col items-center px-5 pt-16 pb-8 sm:px-8 sm:pt-20">
-      <motion.div layoutId="orb" transition={spring} className="w-[min(64vw,300px)]">
-        <OrbView
-          agentState={agentState}
-          getInputVolume={connected ? orbInput : undefined}
-          getOutputVolume={connected ? orbOutput : undefined}
-        />
-      </motion.div>
+    // Même contrainte que l'accueil : tout tient à l'écran, l'Orb prend la place restante
+    <div className="flex h-[calc(100svh-7rem)] min-h-min flex-col items-center px-5 pt-[clamp(1rem,5svh,5rem)] pb-4 sm:px-8">
+      <div className="flex min-h-min w-full flex-1 items-center justify-center">
+        <motion.div
+          layoutId="orb"
+          transition={spring}
+          className="aspect-square h-full min-h-24 max-h-[min(64vw,300px)]"
+        >
+          <OrbView
+            className="h-full"
+            agentState={agentState}
+            getInputVolume={connected ? orbInput : undefined}
+            getOutputVolume={connected ? orbOutput : undefined}
+          />
+        </motion.div>
+      </div>
 
-      <div className="mt-6 h-6 text-base font-medium" aria-live="polite">
+      <div className="mt-6 h-6 shrink-0 text-base font-medium" aria-live="polite">
         <ShimmeringText key={status} text={status} duration={1.6} repeatDelay={0.4} />
       </div>
 
@@ -60,9 +68,9 @@ export function CallScreen({
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ ...spring, delay: 0.15 }}
-        className="mt-6 w-full max-w-xl"
+        className="mt-6 w-full max-w-xl shrink-0"
       >
-        <Conversation className="h-64 [mask-image:linear-gradient(to_bottom,transparent,black_3rem)] sm:h-72">
+        <Conversation className="h-[clamp(10rem,32svh,18rem)] [mask-image:linear-gradient(to_bottom,transparent,black_3rem)]">
           <ConversationContent className="flex min-h-full flex-col justify-end px-1 pt-12 pb-2">
             {transcript.length === 0 ? (
               <p className="text-center text-sm text-muted-foreground">{t.transcriptEmpty}</p>
