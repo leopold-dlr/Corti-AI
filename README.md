@@ -1,7 +1,7 @@
 # Voice Diligence Agent
 
-**Nicolas** is a voice agent that runs customer interviews for commercial due diligence.
-As soon as the call ends, it becomes structured data, a binary quality check and an investment memo.
+**Nicolas** is an AI voice agent that runs the customer calls of a commercial due diligence on Dealroom: satisfaction, pricing, renewal, AI use.
+Each call lasts about 5 minutes. As soon as it ends, it becomes structured data, a binary quality check and an investment memo.
 Built with ElevenLabs Agents (voice, analysis) and Mistral (conversation LLM and memo).
 
 **Live demo:** [nicolas-agent.vercel.app](https://nicolas-agent.vercel.app)
@@ -58,6 +58,16 @@ npm run dev
 | `MISTRAL_API_KEY` | Server only: writes the memo |
 
 In development, `http://localhost:3000/?conversation=<conversation_id>` replays the analysis of an existing call.
+
+### Smoke test
+
+`scripts/smoke-test.sh` checks a deployment without any key (needs `curl` and `jq`): home page, no server key in the client JS, request validation, and the server-side ElevenLabs key. It exits with code 1 if a check fails.
+
+```bash
+./scripts/smoke-test.sh                                   # production
+./scripts/smoke-test.sh http://localhost:3000             # local server
+CONVERSATION_ID=conv_xxx ./scripts/smoke-test.sh          # + full analysis (one Mistral call)
+```
 
 <details>
 <summary>Agent configuration (exact identifiers)</summary>

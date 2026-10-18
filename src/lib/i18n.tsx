@@ -19,7 +19,7 @@ const messages = {
     pitch:
       "An AI voice agent that runs the customer calls of a commercial due diligence on Dealroom: satisfaction, pricing, renewal, AI use. Each call becomes structured data and an investment memo.",
     roleplay:
-      "Play a Dealroom user (VC analyst, PE associate). About 8 minutes, in English or French.",
+      "Play a Dealroom user (VC analyst, PE associate). About 5 minutes, in English or French.",
     start: "Start the interview",
     hangUp: "Hang up",
     copyNote: "Copy the memo",
@@ -88,7 +88,7 @@ const messages = {
     pitch:
       "Un agent vocal IA qui mène les appels clients d'une due diligence commerciale sur Dealroom : satisfaction, prix, renouvellement, usage de l'IA. Chaque appel devient des données structurées et une note de synthèse.",
     roleplay:
-      "Jouez un utilisateur de Dealroom (analyste VC, associate PE). Environ 8 minutes, en français ou en anglais.",
+      "Jouez un utilisateur de Dealroom (analyste VC, associate PE). Environ 5 minutes, en français ou en anglais.",
     start: "Commencer l'entretien",
     hangUp: "Raccrocher",
     copyNote: "Copier la note",
