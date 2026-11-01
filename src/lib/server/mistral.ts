@@ -6,7 +6,7 @@ import { AnalysisError } from "@/lib/server/errors";
 const MODEL = "mistral-medium-latest";
 const MAX_ATTEMPTS = 2;
 
-const PROMPT = `Tu reçois la transcription d'un entretien client mené dans le cadre d'une due diligence sur Dealroom, une plateforme de données VC. Rédige une note de synthèse pour l'équipe d'investissement, en français, au format JSON suivant :
+const PROMPT = `Tu reçois la transcription d'un entretien client mené dans le cadre d'une due diligence sur PitchBook, une plateforme de données sur les marchés privés. Rédige une note de synthèse pour l'équipe d'investissement, en français, au format JSON suivant :
 {
   "synthese": string (3 phrases maximum),
   "signaux_positifs": string[],
@@ -53,7 +53,7 @@ export async function writeMemo(transcript: TranscriptTurn[]): Promise<Memo> {
 
 function formatTranscript(transcript: TranscriptTurn[]) {
   return transcript
-    .map((turn) => `${turn.role === "agent" ? "Nicolas (enquêteur)" : "Interlocuteur"} : ${turn.message}`)
+    .map((turn) => `${turn.role === "agent" ? "Bob (enquêteur)" : "Interlocuteur"} : ${turn.message}`)
     .join("\n");
 }
 

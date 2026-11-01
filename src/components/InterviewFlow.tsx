@@ -76,7 +76,7 @@ export function InterviewFlow() {
       },
       onDisconnect: (details) => {
         const conversationId = conversationIdRef.current;
-        // Que ce soit le visiteur ou Nicolas qui raccroche, on passe à la suite dès qu'un appel a eu lieu
+        // Que ce soit le visiteur ou Bob qui raccroche, on passe à la suite dès qu'un appel a eu lieu
         if (conversationId) {
           setPhase({ name: "ended", conversationId, endedBy: details.reason });
         } else {

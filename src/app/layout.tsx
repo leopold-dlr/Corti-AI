@@ -23,7 +23,7 @@ const newsreader = Newsreader({
 export const metadata: Metadata = {
   title: "Voice Diligence Agent",
   description:
-    "An AI voice agent that runs the customer calls of a commercial due diligence on Dealroom. Each call becomes structured data, a quality check and an investment memo.",
+    "An AI voice agent that runs the customer calls of a commercial due diligence on PitchBook. Each call becomes structured data, a quality check and an investment memo.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

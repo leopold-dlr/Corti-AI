@@ -29,7 +29,7 @@ export function CallScreen({
 }: CallScreenProps) {
   const { t } = useLanguage();
 
-  // Courbe de réponse de l'Orb : forte quand Nicolas parle, plus douce pour l'interlocuteur
+  // Courbe de réponse de l'Orb : forte quand Bob parle, plus douce pour l'interlocuteur
   const orbInput = useCallback(
     () => Math.min(1, Math.sqrt(getInputVolume()) * 1.4),
     [getInputVolume],

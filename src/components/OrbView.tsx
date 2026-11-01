@@ -12,7 +12,7 @@ const Orb = dynamic(() => import("@/components/ui/orb").then((m) => m.Orb), {
   loading: () => <StaticOrb />,
 });
 
-// Identité visuelle de Nicolas. Le shader dégrade noir → couleur 1 → couleur 2 → blanc ;
+// Identité visuelle de Bob. Le shader dégrade noir → couleur 1 → couleur 2 → blanc ;
 // dans cet ordre, l'ambre occupe le cœur et le bleu le contour, les deux restent lisibles.
 export const ORB_COLORS: [string, string] = ["#F5B700", "#3B5BDB"];
 

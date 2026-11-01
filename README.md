@@ -1,6 +1,6 @@
 # Voice Diligence Agent
 
-**Nicolas** is an AI voice agent that runs the customer calls of a commercial due diligence on Dealroom: satisfaction, pricing, renewal, AI use.
+**Bob** is an AI voice agent that runs the customer calls of a commercial due diligence on PitchBook: satisfaction, pricing, renewal, AI use.
 Each call lasts about 5 minutes. As soon as it ends, it becomes structured data, a binary quality check and an investment memo.
 Built with ElevenLabs Agents (voice, analysis) and Mistral (conversation LLM and memo).
 
@@ -8,14 +8,14 @@ Built with ElevenLabs Agents (voice, analysis) and Mistral (conversation LLM and
 
 ![Interview dossier](docs/screenshot.png)
 
-> Fictional scenario for demonstration purposes: a due diligence on Dealroom, a VC data platform.
-> Not affiliated with Dealroom.co and no information about any real deal.
+> Fictional scenario for demonstration purposes: a due diligence on PitchBook, a private-market data platform.
+> Not affiliated with PitchBook and no information about any real deal.
 
 ## How it works
 
 ```mermaid
 flowchart LR
-    V([Visitor]) -- voice, WebRTC --> A[ElevenLabs agent<br/>Nicolas · LLM: Mistral]
+    V([Visitor]) -- voice, WebRTC --> A[ElevenLabs agent<br/>Bob · LLM: Mistral]
     A -- conversation_id --> UI[Next.js app]
     UI -- POST /api/analyse --> API[Route handler]
     API -- "GET /v1/convai/conversations/{id}<br/>polled every 3 s, 90 s max" --> EL[ElevenLabs Analysis<br/>16 data fields · 7 criteria]
@@ -33,7 +33,7 @@ The API keys never leave the server: the browser only knows the public agent ID.
 
 ## Design choices
 
-- **Compliance rules live in the agent.** Nicolas discloses that it is an AI and asks for consent (AI Act transparency), refuses inside information, and makes no promise outside its script. Three criteria check these rules after every call.
+- **Compliance rules live in the agent.** Bob discloses that it is an AI and asks for consent (AI Act transparency), refuses inside information, and makes no promise outside its script. Three criteria check these rules after every call.
 - **Binary criteria rather than composite scores.** A yes/no question with a rationale ("Did the agent disclose it is an AI?") is more reliable for an LLM evaluator than a 1-to-10 score, and easier to audit.
 - **Completeness computed in code.** The completeness rate (non-null fields / 16) and the list of missing fields are deterministic, so data quality does not rely only on an LLM evaluator.
 - **Constrained Data collection.** Fields use fixed value lists where possible, and the extractor is told not to infer: an unasked question stays empty instead of being guessed.

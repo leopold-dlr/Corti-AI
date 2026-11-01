@@ -48,7 +48,7 @@ export function CallPill({ connectedAt, getFrequencyData, onHangUp }: CallPillPr
           fadeEdges={false}
           className="w-[38px] shrink-0"
         />
-        <span className="text-sm font-medium">Nicolas</span>
+        <span className="text-sm font-medium">Bob</span>
         <span className="ml-auto font-mono text-sm tabular-nums text-white/70">
           {elapsed}
         </span>
